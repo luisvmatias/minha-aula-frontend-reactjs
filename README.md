@@ -111,4 +111,27 @@ No HTML é onclick. No React é CamelCase.
 💡 Dica de Ouro: O Console do Navegador
 Se a tela ficar branca, aperte F12 e vá na aba Console. O React é muito bom em dizer exatamente em qual linha você errou, mas ele faz isso por lá!
 ```
+## 1: O Conceito de Props (Propriedades)
+- **O que são**? São informações passadas de um "Componente Pai" para um "Componente Filho".
+- **Imutabilidade**: As props são somente leitura. O filho as recebe e usa, mas não pode alterá-las.
+- **Analogia**: Pense em uma função soma(a, b). Os valores de a e b são as props da função.
+--  **Utilidade**: Permite criar componentes genéricos (Ex: um botão azul e um botão vermelho usando o mesmo código).
 
+## 2: O Conceito de State (Estado) com useState
+- **O que é**? É a "memória" do componente. Dados que, ao mudarem, fazem o React re-renderizar (desenhar novamente) a tela.
+- **O Hook useState:** É uma função especial que nos devolve duas coisas:
+    - O valor atual do estado.
+    - Uma função para atualizar esse valor.
+
+**Regra de Ouro:** Nunca altere o estado diretamente (estado = novoValor). Use sempre a função de atualização.
+
+## 3: Renderização de Listas
+- **O Problema:** Como exibir 100 produtos sem escrever 100 componentes manualmente?
+- **A Solução:** Usar o método .map() do JavaScript para percorrer um Array e retornar um componente para cada item.
+- **A Prop key:** O React exige que cada item de uma lista tenha um identificador único (key) para que ele saiba exatamente qual item atualizar se algo mudar.
+
+### 📝 Exercício Prático: Vitrine de Produtos
+1. Crie um array de objetos chamado `produtos` (com nome e preço).
+2. Crie um componente chamado `Produto.jsx` que recebe essas informações via props.
+3. No `App.jsx`, use o `.map()` para exibir todos os produtos na tela.
+4. Adicione um botão "Carrinho" que, ao ser clicado, usa o `useState` para mostrar quantas vezes o produto foi adicionado.
